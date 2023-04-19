@@ -35,7 +35,7 @@
             }
             ul li ul li a {display:block !important;}
 
-            #dropdownitem:hover{
+            .dropdown-item:hover{
                 background-color: wheat;
             } 
             #dropdown {
@@ -51,36 +51,46 @@
             #dropdown:hover #dropdown-child {
               display: block;
             }
+            input:focus{
+              outline: 0; 
+            }
         </style>
+        
     </head>
     <body>
+        <script src="actions.js"></script>
         <h1>Welcome to Number Converter</h1>
         <div class="row" style="margin-left: 30%; margin-right: 30%; margin-top: 7%;">
-            <div id="dropdown" class="col dropdown" style="float: left;">
-                <a class="btn btn-secondary dropdown-toggle border border-0" style="background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Type
+            <div id="dropdown" class="col-4 dropdown" style="float: left;">
+                <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem" style="background-color: #fa8072; width:200px;">
+                  <p id="type">Type</p>
                 </a>
               
                 <ul id="dropdown-child" class="dropdown-menu opacity-75">
-                  <li><a id = "dropdownitem" class="dropdown-item" href="#">Binary</a></li>
-                  <li><a id = "dropdownitem" class="dropdown-item" href="#">Decimal</a></li>
-                  <li><a id = "dropdownitem" class="dropdown-item" href="#">Octal</a></li>
-                  <li><a id = "dropdownitem" class="dropdown-item" href="#">Hexadecimal</a></li>
+                  <li><a id = "binary" class="dropdown-item" href="#">Binary</a></li>
+                  <li><a id = "decimal" class="dropdown-item" href="#">Decimal</a></li>
+                  <li><a id = "octal" class="dropdown-item" href="#">Octal</a></li>
+                  <li><a id = "hexadecimal" class="dropdown-item" href="#">Hexadecimal</a></li>
                 </ul>
             </div>
-            <div class="col" style="text-align: center; font-family: 'Pacifico', cursive; color: #fa8072; font-size: 22px;">To</div>
-            <div class="col dropdown" style="float: right;">
-                <a class="btn btn-secondary dropdown-toggle border border-0" style="background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="col-4" style="text-align: center; font-family: 'Pacifico', cursive; color: #fa8072; font-size: 22px;">To</div>
+            <div class="col-4 dropdown" style="float: right;">
+                <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem-2" style="background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Type
                 </a>
               
                 <ul class="dropdown-menu opacity-75">
-                    <li><a id = "dropdownitem" class="dropdown-item" href="#">Binary</a></li>
-                    <li><a id = "dropdownitem" class="dropdown-item" href="#">Decimal</a></li>
-                    <li><a id = "dropdownitem" class="dropdown-item" href="#">Octal</a></li>
-                    <li><a id = "dropdownitem" class="dropdown-item" href="#">Hexadecimal</a></li>
+                    <li><a id = "binary-2" class="dropdown-item" href="#">Binary</a></li>
+                    <li><a id = "decimal-2" class="dropdown-item" href="#">Decimal</a></li>
+                    <li><a id = "octal-2" class="dropdown-item" href="#">Octal</a></li>
+                    <li><a id = "hexadecimal-2" class="dropdown-item" href="#">Hexadecimal</a></li>
                 </ul>
             </div>
+        </div>
+        <div class = "row" style="margin-left: 30%; margin-right: 30%; margin-top: 7%;">
+          <div class="col-4"><input id="input" type="text" name="text" style = " border: 2px solid #fa8072; border-radius: 5px; width:200px;"></div>
+          <div class="col-4"></div>
+          <div class="col-4"><input id="input-2" type="text" name="text" style = " border: 2px solid #fa8072; border-radius: 5px; width:200px;"></div>
         </div>
         
     </body>
