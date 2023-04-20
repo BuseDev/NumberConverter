@@ -1,5 +1,4 @@
-document.getElementById("binary").onclick = displayType;
-
-function displayType() {
-  document.getElementById("dropdownitem").innerHTML = "Binary";
+function setType(id, type){
+    document.getElementById(id).innerHTML = type;
 }
+ 

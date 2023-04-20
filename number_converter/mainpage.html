@@ -7,6 +7,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Cabin:wght@500&family=Pacifico&family=Signika:wght@300&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
@@ -55,43 +58,43 @@
               outline: 0; 
             }
         </style>
-        
+        <script src="actions.js"></script>
     </head>
     <body>
-        <script src="actions.js"></script>
         <h1>Welcome to Number Converter</h1>
         <div class="row" style="margin-left: 30%; margin-right: 30%; margin-top: 7%;">
             <div id="dropdown" class="col-4 dropdown" style="float: left;">
-                <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem" style="background-color: #fa8072; width:200px;">
-                  <p id="type">Type</p>
-                </a>
-              
-                <ul id="dropdown-child" class="dropdown-menu opacity-75">
-                  <li><a id = "binary" class="dropdown-item" href="#">Binary</a></li>
-                  <li><a id = "decimal" class="dropdown-item" href="#">Decimal</a></li>
-                  <li><a id = "octal" class="dropdown-item" href="#">Octal</a></li>
-                  <li><a id = "hexadecimal" class="dropdown-item" href="#">Hexadecimal</a></li>
-                </ul>
-            </div>
-            <div class="col-4" style="text-align: center; font-family: 'Pacifico', cursive; color: #fa8072; font-size: 22px;">To</div>
-            <div class="col-4 dropdown" style="float: right;">
-                <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem-2" style="background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem" style="font-family: 'Acme', sans-serif; font-size: 18px; background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Type
                 </a>
               
-                <ul class="dropdown-menu opacity-75">
-                    <li><a id = "binary-2" class="dropdown-item" href="#">Binary</a></li>
-                    <li><a id = "decimal-2" class="dropdown-item" href="#">Decimal</a></li>
-                    <li><a id = "octal-2" class="dropdown-item" href="#">Octal</a></li>
-                    <li><a id = "hexadecimal-2" class="dropdown-item" href="#">Hexadecimal</a></li>
+                <ul id="dropdown-child" class="dropdown-menu opacity-75">
+                  <li><a onclick="setType('dropdownitem', 'Binary');" class="dropdown-item" href="#">Binary</a></li>
+                  <li><a onclick="setType('dropdownitem', 'Decimal');" class="dropdown-item" href="#">Decimal</a></li>
+                  <li><a onclick="setType('dropdownitem', 'Octal');" class="dropdown-item" href="#">Octal</a></li>
+                  <li><a onclick="setType('dropdownitem', 'Hexadecimal');" class="dropdown-item" href="#">Hexadecimal</a></li>
                 </ul>
             </div>
+            <div class="col-4" style="text-align: center; font-family: 'Pacifico', cursive; color: #fa8072; font-size: 22px;">To</div>
+            <div id="dropdown" class="col-4 dropdown" style="float: left;">
+              <a class="btn btn-secondary dropdown-toggle border border-0" id="dropdownitem2" style="font-family: 'Acme', sans-serif; font-size: 18px; background-color: #fa8072; width:200px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Type
+              </a>
+            
+              <ul id="dropdown-child" class="dropdown-menu opacity-75">
+                <li><a onclick="setType('dropdownitem2', 'Binary');" class="dropdown-item" href="#">Binary</a></li>
+                <li><a onclick="setType('dropdownitem2', 'Decimal');" class="dropdown-item" href="#">Decimal</a></li>
+                <li><a onclick="setType('dropdownitem2', 'Octal');" class="dropdown-item" href="#">Octal</a></li>
+                <li><a onclick="setType('dropdownitem2', 'Hexadecimal');" class="dropdown-item" href="#">Hexadecimal</a></li>
+              </ul>
+          </div>
         </div>
-        <div class = "row" style="margin-left: 30%; margin-right: 30%; margin-top: 7%;">
-          <div class="col-4"><input id="input" type="text" name="text" style = " border: 2px solid #fa8072; border-radius: 5px; width:200px;"></div>
-          <div class="col-4"></div>
-          <div class="col-4"><input id="input-2" type="text" name="text" style = " border: 2px solid #fa8072; border-radius: 5px; width:200px;"></div>
+        <div class = "row" style="margin-left: 30%; margin-right: 30%; margin-top: 4%;">
+          <div class="col-3"></div>
+          <div class="col-9" style="text-align: left; font-family: 'Pacifico', cursive; color: #fa8072; font-size: 18px; padding-bottom: 5px; padding-left: 20px;">Input:</div>
         </div>
-        
+        <div class = "row" style="margin-left: 30%; margin-right: 30%;">
+          <div class="col-12" style="text-align: center;"><input id="input" type="text" name="text" style = " border: 2px solid #fa8072; border-radius: 5px; width:200px;"><button style="font-family: 'Acme', sans-serif; background-color: #fa8072; color: #fff3e6; border-radius: 5px; font-size: 16px; border: 2px solid #fa8072; margin-left: 5px;">Convert</button></div>
+        </div>
     </body>
 </html>
